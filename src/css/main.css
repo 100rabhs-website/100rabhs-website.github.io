@@ -231,11 +231,11 @@ h4, .h4 {
     margin: 20px 0px 20px 0px;
 }
 
-.service-item p a {
+.info-content a, .service-item p a {
     color: #084887
 }
 
-.service-item p a:hover {
+.info-content a:hover, .service-item p a:hover {
     color: #084887
 }
 
