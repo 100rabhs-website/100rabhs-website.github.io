@@ -211,7 +211,9 @@ a:hover {
 
 .left-text {
     background-color: rgba(255, 255, 255, 0.9);
-    padding: 25px 30px;
+    padding: 25px 30px ;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .info-content .left-text h4 {
@@ -262,6 +264,7 @@ h4, .h4 {
 
 .info-content .service-item {
     background-color: rgba(255, 255, 255, 0.9);
+    margin-top: 30px;
     padding: 25px 30px;
     text-align: justify;
     color: #111;
