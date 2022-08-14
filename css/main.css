@@ -280,6 +280,14 @@ h4, .h4 {
 }
 
 
+.info-content .service-item li {
+    margin: 20px 0px;
+    font-weight: 500;
+    color: #084887;
+    list-style: none;
+
+}
+
 
 .social-content {
     padding-top: 10vh;
