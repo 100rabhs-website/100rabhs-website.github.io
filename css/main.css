@@ -285,8 +285,15 @@ h4, .h4 {
     font-weight: 500;
     color: #084887;
     list-style: none;
-
 }
+
+.info-content .service-item li ul{
+    margin: 2px 0px;
+    font-weight: 500;
+    color: #084887;
+    list-style: none;
+}
+
 
 
 .social-content {
