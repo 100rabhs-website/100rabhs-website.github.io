@@ -8,7 +8,7 @@ function update_feed(feed, element) {
       feed_html = ''
       $(data)
         .find('entry,item')
-        .slice(0, 5)
+        .slice(0, 10)
         .each(function () {
           console.log(this)
           feed_html = feed_html + get_item($(this))
