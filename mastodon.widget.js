@@ -221,7 +221,7 @@ MastodonApi.prototype.listStatuses = function() {
 	 * @param object status_
 	 */
 	var appendStatus = function(status_) {
-		//console.log( status_ );
+		console.log( status_ );
 		var content;
 		var date, url, avatar, user;
 
@@ -241,6 +241,7 @@ MastodonApi.prototype.listStatuses = function() {
 
 		if(status_.reblog) {
 			// data from BOOSTED status
+            content = $("<div class='toot-text'>" + status_.reblog.content + "</div>" + "<div class='toot-medias'></div>");
 
 			// toot date
 			date = prepareDateDisplay(status_.reblog.created_at);
