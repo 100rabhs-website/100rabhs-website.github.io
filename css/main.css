@@ -285,6 +285,7 @@ h4, .h4 {
     font-weight: 500;
     color: #084887;
     list-style: none;
+    text-align: left;
 }
 
 .info-content .service-item li ul{
