@@ -1,123 +1,262 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>100rabh's Social Links Central</title>
-    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <title>Saurabh Minni — Connect & Coordinates</title>
+    <meta name="description" content="Saurabh Minni's official coordinates and social nodes. Founder at Sudama Health, 20-year tech veteran (Ex-Google, Ex-Intuit).">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- External CSS Styling & Icons -->
     <link href="./fontawesome/css/all.css" rel="stylesheet">
     <link href="./fontawesome/css/v4-shims.css" rel="stylesheet">
-
-    <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800"
-        rel="stylesheet">
+    
+    <!-- Bespoke Bits & Pulse Design System stylesheet -->
+    <link rel="stylesheet" href="./css/bits-pulse.css">
 
     <style type="text/css">
         body {
-            font-family: 'Open Sans', sans-serif;
-            background-color: #333;
-        }
-
-        .header {
-            font-weight: 600;
-            font-size: 40px;
-            text-align: center;
-            color: #ff7d27;
-            margin-bottom: 50px;
-        }
-
-
-        ul {
-            list-style-type: none;
-            text-align: center;
+            display: flex;
             align-items: center;
-            padding-left: 0;
-            margin-left: 0;
-
+            justify-content: center;
+            min-height: 100vh;
+            padding: 2rem;
+            margin: 0;
+            background-color: var(--obsidian-slate);
         }
 
-        ul li {
-            margin: 10px 0px 10px 0px;
-            padding: 10px 20px 10px 20px;
-            max-width: 800px;
+        .connect-container {
+            max-width: 500px;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid var(--border-color);
+            padding: 3rem 2rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(16px);
             text-align: center;
-            border: 1px solid #ff7d27;
-            color: #eee;
+            position: relative;
+            overflow: hidden;
         }
 
-        ul a:hover li,
-        ul a:active li {
-            border: 1px solid #eee;
-            color: #ff7d27;
-            background-color: #333;
+        .connect-avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 10%;
+            border: 2px solid var(--pulse-emerald);
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
+            margin: 0 auto 1.5rem auto;
+            display: block;
+            object-fit: cover;
         }
 
-        ul a:hover {
+        .connect-name {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 1.75rem;
+            letter-spacing: -0.02em;
+            color: var(--alabaster-white);
+            margin-bottom: 0.5rem;
+        }
+
+        .connect-title {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+            margin-bottom: 2rem;
+            font-family: var(--font-body);
+        }
+
+        .connect-links-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+            margin: 0 0 2rem 0;
+        }
+
+        .connect-link-item {
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 12px 24px;
+            background: rgba(30, 41, 59, 0.4);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            border-radius: 10px;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .connect-link-item i, .connect-link-item em {
+            font-size: 1.1rem;
+            color: var(--pulse-emerald);
+            transition: color 0.25s ease;
+        }
+
+        .connect-link-item:hover {
+            background: rgba(16, 185, 129, 0.08);
+            border-color: var(--pulse-emerald);
+            color: var(--pulse-emerald);
+            box-shadow: 0 0 12px rgba(16, 185, 129, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .connect-link-item:hover i, .connect-link-item:hover em {
+            color: var(--alabaster-white);
+        }
+
+        /* Operational Status Badge */
+        .connect-status {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            background: rgba(16, 185, 129, 0.08);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            color: var(--pulse-emerald);
+            padding: 6px 12px;
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 2rem;
+            letter-spacing: 0.05em;
+        }
+
+        .connect-footer {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .connect-home-btn {
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s ease;
+        }
+
+        .connect-home-btn:hover {
+            color: var(--pulse-emerald);
         }
     </style>
-
 </head>
 
 <body>
 
+    <div class="connect-container">
+        
+        <!-- Quick navigation back to main hub -->
+        <a href="./index.html" class="connect-home-btn">
+            <i class="fa fa-arrow-left"></i> HUB
+        </a>
 
-    <div class="container">
-        <div class="row justify-content-center mt-4">
+        <!-- Premium Generated Avatar -->
+        <img class="connect-avatar" src="./img/avatar3.png" alt="Saurabh Minni's custom abstract tech-organic avatar" />
 
-            <div class="header">Saurabh Minni</div>
+        <!-- Name Coordinates -->
+        <h1 class="connect-name">SAURABH MINNI</h1>
+        <p class="connect-title">Founder at Sudama Health | Tech Veteran (Ex-Google, Ex-Intuit)</p>
 
+        <!-- Dynamic operational hub stamp -->
+        <div class="connect-status">
+            <i class="fa fa-clock-o"></i> [STATUS: BENGALURU, IN | <span id="bengaluru-time">--:--:-- IST</span>]
         </div>
-        <div class="row justify-content-center mt-3">
-            <ul>
-                <a href="https://www.linkedin.com/in/100rabh/" target="_blank"
-                    rel="noopener noreferrer">
-                    <li><i class="fa fa-linkedin"></i> LinkedIn</li>
-                </a>
-                <a href="https://blog.100rabh.com" target="_blank"
-                    rel="noopener noreferrer">
-                    <li><i class="fa fa-blog"></i>
-                        Personal Blog</li>
-                </a>
-                <a href="https://mastodon.social/@the100rabh" target="_blank"
-                    rel="me noopener noreferrer">
-                    <li><i class="fab fa-mastodon"></i>
-                        @the100rabh@mastodon.social</li>
-                </a>
-                <a href="https://github.com/the100rabh/" target="_blank"
-                    rel="noopener noreferrer">
-                    <li><i class="fa fa-github"></i> Github</li>
-                </a>
-                <a href="https://angel.co/u/saurabh-minni" target="_blank"
-                    rel="noopener noreferrer">
-                    <li><i class="fa fa-angellist"></i> AngelList</li>
-                </a>
-                <a href="https://twitter.com/the100rabh" target="_blank"
-                    rel="noopener noreferrer">
-                    <li><i class="fa fa-twitter"></i>
-                        Twitter</li>
-                </a>
 
-            </ul>
+        <!-- Social Node Links -->
+        <div class="connect-links-list">
+            <a class="connect-link-item" href="https://www.linkedin.com/in/100rabh/" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-linkedin"></i> LinkedIn Node
+            </a>
+            
+            <a class="connect-link-item" href="https://blog.100rabh.com" target="_blank" rel="noopener noreferrer">
+                <i class="fa fa-rss"></i> Personal Chronicles Blog
+            </a>
+            
+            <a class="connect-link-item" href="https://mastodon.social/@the100rabh" target="_blank" rel="me noopener noreferrer">
+                <i class="fab fa-mastodon"></i> Fediverse Mastodon Node
+            </a>
+            
+            <a class="connect-link-item" href="https://github.com/the100rabh/" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i> Open Source Github Node
+            </a>
+            
+            <a class="connect-link-item" href="https://wellfound.com/u/saurabh-minni" target="_blank" rel="noopener noreferrer">
+                <em class="fa fa-handshake-o"></em> Wellfound / AngelList
+            </a>
+            
+            <a class="connect-link-item" href="https://twitter.com/the100rabh" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-twitter"></i> X / Twitter Node
+            </a>
+        </div>
+
+        <!-- System Footer Specifications -->
+        <div class="connect-footer">
+            <span>&copy; 2026 Saurabh Minni | Bits & Pulse Coordinates</span>
+            <span style="color: var(--pulse-emerald);">SYSTEM PORTAL ENTIRELY ACTIVE</span>
         </div>
     </div>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async
-        src="https://www.googletagmanager.com/gtag/js?id=UA-2279529-5"></script>
+
+    <!-- Core Scripts Load -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+    
+    <script>
+        $(document).ready(function() {
+            // Setup local ticking Bengaluru clock
+            function updateClock() {
+                const options = {
+                    timeZone: 'Asia/Kolkata',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit',
+                    hour12: false
+                };
+                try {
+                    const formatter = new Intl.DateTimeFormat('en-US', options);
+                    const parts = formatter.formatToParts(new Date());
+                    const timeStr = parts.map(p => p.value).join('');
+                    $('#bengaluru-time').text(timeStr + ' IST');
+                } catch (e) {
+                    const d = new Date();
+                    const utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+                    const ist = new Date(utc + (3600000 * 5.5));
+                    const pad = (n) => n.toString().padStart(2, '0');
+                    $('#bengaluru-time').text(`${pad(ist.getHours())}:${pad(ist.getMinutes())}:${pad(ist.getSeconds())} IST`);
+                }
+            }
+            setInterval(updateClock, 1000);
+            updateClock();
+        });
+    </script>
+
+    <!-- Global Google Analytics Node -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-2279529-5"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'UA-2279529-5');
     </script>
-
-
 </body>
 
 </html>

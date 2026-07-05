@@ -1,370 +1,440 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>100rabh's Web Central</title>
-    <meta name="description" content="Saurabh Minni's personal website, showcasing projects, skills, and thoughts on technology, development, and life.">
-    <meta name="keywords" content="Saurabh Minni, the100rabh, developer, engineer, portfolio, blog, tech, Google, Adobe, Intuit, Sudama Health, Apache Kafka">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Saurabh Minni - Founder & Builder</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <meta name="description"
+        content="Saurabh Minni's personal portfolio. 20-year tech veteran (Ex-Google, Ex-Intuit) and founder of Sudama Health scaling rural telemedicine networks.">
+    <meta name="keywords"
+        content="Saurabh Minni, the100rabh, developer, engineer, founder, healthtech, Sudama Health, Google, Intuit, Go, Python, local LLM, rural telemedicine">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://100rabh.com/">
-    <meta property="og:title" content="100rabh's Web Central">
-    <meta property="og:description" content="Saurabh Minni's personal website, showcasing projects, skills, and thoughts on technology, development, and life.">
-    <meta property="og:image" content="https://100rabh.com/img/1st-big-item.jpg">
+    <meta property="og:title" content="Saurabh Minni - Technology Founder & Full-Stack Architect">
+    <meta property="og:description"
+        content="20-year tech veteran (Ex-Google, Ex-Intuit) and founder of Sudama Health. Building at the intersection of deep engineering and human impact.">
+    <meta property="og:image" content="https://100rabh.com/img/avatar2.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://100rabh.com/">
-    <meta property="twitter:title" content="100rabh's Web Central">
-    <meta property="twitter:description" content="Saurabh Minni's personal website, showcasing projects, skills, and thoughts on technology, development, and life.">
-    <meta property="twitter:image" content="https://100rabh.com/img/1st-big-item.jpg">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="twitter:title" content="Saurabh Minni - Technology Founder & Full-Stack Architect">
+    <meta property="twitter:description"
+        content="20-year tech veteran (Ex-Google, Ex-Intuit) and founder of Sudama Health. Building at the intersection of deep engineering and human impact.">
+    <meta property="twitter:image" content="https://100rabh.com/img/avatar2.png">
+
+    <!-- Favicons -->
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-
+    <!-- External CSS Styling -->
     <link href="./fontawesome/css/all.css" rel="stylesheet">
     <link href="./fontawesome/css/v4-shims.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/hero-slider.css">
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/owl-carousel.css">
-
-    <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800"
-        rel="stylesheet">
     <link rel="stylesheet" href="./mastodon.widget.css" />
-    <link href="./github-widget/github-widget.css" rel="stylesheet"
-        type="text/css" />
+    <link href="./github-widget/github-widget.css" rel="stylesheet" type="text/css" />
 
-
+    <!-- Bespoke Bits & Pulse Design System stylesheet -->
+    <link rel="stylesheet" href="./css/bits-pulse.css">
 </head>
-<!--
-Vanilla Template
-https://templatemo.com/tm-526-vanilla
--->
 
 <body>
 
-    <div class="fixed-side-navbar">
-        <ul class="nav flex-column">
-            <li class="nav-item"><a class="nav-link"
-                    href="#home"><span>Intro</span></a></li>
-            <li class="nav-item"><a class="nav-link"
-                    href="#info"><span>Info</span></a></li>
-            <li class="nav-item"><a class="nav-link"
-                    href="#social"><span>Social</span></a></li>
-        </ul>
-    </div>
+    <!-- Executive Control Header -->
+    <header id="control-header">
+        <div class="logo-container">
+            <div class="pulse-dot"></div>
+            <div class="site-title">SAURABH <span>MINNI</span></div>
+        </div>
 
-    <div class="parallax-content baner-content" id="home">
-        <div class="container">
-            <div class="first-content">
-                <h1>@the100rabh</h1>
-                <span>Your friendly neighbourhood guy</span>
-                <div class="primary-button">
-                    <a href="#info">Know More</a>
+        <!-- Founder Mode Toggle Switch -->
+        <div class="mode-toggle-wrapper">
+            <button class="mode-btn active" id="btn-mode-pulse" aria-label="Switch to Pulse Mode">
+                <i class="fa fa-heartbeat"></i> Pulse Mode
+            </button>
+            <button class="mode-btn" id="btn-mode-bits" aria-label="Switch to Bits Mode">
+                <i class="fa fa-code"></i> Bits Mode
+            </button>
+        </div>
+    </header>
+
+    <!-- Blueprint Dossier Layout Grid -->
+    <div class="dashboard-container">
+
+        <!-- Sticky Sidebar Coordinates Panel -->
+        <aside class="sidebar-panel">
+            <span class="code-spec-anno">aside.sidebar-panel { position: sticky; border-right: 1px; }</span>
+
+            <div class="profile-card">
+                <div class="avatar-container">
+                    <img class="avatar-image" src="./img/avatar3.png"
+                        alt="Saurabh Minni's premium tech-organic schematic avatar" />
+                </div>
+
+                <div class="status-badge" id="operational-status">
+                    <i class="fa fa-clock clock-icon"></i>
+                    [STATUS: OPERATING IN BENGALURU, IN | <span id="bengaluru-time">--:--:-- IST</span>]
+                </div>
+
+                <div class="profile-identity">
+                    <h1>SAURABH MINNI</h1>
+                    <h2>Founder at Sudama Health | Tech Veteran (Ex-Google, Ex-Intuit)</h2>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <!-- Color scheme - https://coolors.co/909cc2-084887-f58a07-f9ab55-f7f5fb
+            <!-- Minimalist Navigation Coordinates -->
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active"><a href="#home"><span class="nav-num">00.</span> INTRO</a></li>
+                    <li><a href="#ventures"><span class="nav-num">01.</span> VENTURES</a></li>
+                    <li><a href="#laboratory"><span class="nav-num">02.</span> THE LABORATORY</a></li>
+                    <li><a href="#chronicles"><span class="nav-num">03.</span> CHRONICLES</a></li>
+                </ul>
+            </nav>
 
-https://coolors.co/b9f18c-084887-0a0908-f9ab55-f7f5fb
--->
-    <div class="info-content" id="info">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="left-text">
-                        <h4>More about 100rabh</h4>
-                        <div class="line-dec"></div>
-                        <p>I am also known as Saurabh Minni.</p>
-                        <p> I am a generalist, have design and coded from
-                            Assembly, C, C++, Java, PHP, Python, Go, Dart,
-                            Flutter, Android and tried a lot more. Previously
-                            worked at Adobe, Intuit and Google. Currently trying
-                            to build something to transform lives. </p>
-                        <p>Some of the notable apps where I have contributed to
-                            are : </p>
-                        <ul>
-                            <li>- <a href="https://www.adobe.com/in/products/captivate.html"
-                                    target="_blank"
-                                    rel="noopener noreferrer">Adobe
-                                    Captivate</a></li>
-                            <li>- <a href="https://play.google.com/store/apps/details?id=com.intuit.turbotax.mobile"
-                                    target="_blank"
-                                    rel="noopener noreferrer">SnapTax
-                                    for Android (Now TurboTax for Android)</a>
-                            </li>
-                            <li>- <a href="https://docs.google.com"
-                                    target="_blank"
-                                    rel="noopener noreferrer">Google
-                                    Docs</a></li>
-                            <li>- <a href="https://pay.google.com/intl/en_in/about/"
-                                    target="_blank"
-                                    rel="noopener noreferrer">Google
-                                    Pay</a></li>
-                            <li>- <a href="https://assistant.google.com/"
-                                    target="_blank"
-                                    rel="noopener noreferrer">Google
-                                    Assistant</a></li>
-                            <li>- <a href="https://gemini.google.com/"
-                                    target="_blank"
-                                    rel="noopener noreferrer">Google
-                                    Gemini</a></li>
-                        </ul>
-                        <p>I have also written a book, <a
-                                href="https://books.google.co.in/books/about/Apache_Kafka_Cookbook.html?id=khnWjgEACAAJ&redir_esc=y"
-                                target="_blank" rel="noopener noreferrer">Apache
-                                Kafka Cookbook</a> back in 2015</p>
+            <!-- Metadata Coordinates and External Links -->
+            <div class="sidebar-footer">
+                <div class="coordinates-list">
+                    <div class="coordinate-item">
+                        <span class="coordinate-label">LATITUDE:</span>
+                        <span class="coordinate-val">12.9716° N</span>
+                    </div>
+                    <div class="coordinate-item">
+                        <span class="coordinate-label">LONGITUDE:</span>
+                        <span class="coordinate-val">77.5946° E</span>
+                    </div>
+                    <div class="coordinate-item">
+                        <span class="coordinate-label">LOCAL UTC:</span>
+                        <span class="coordinate-val">+05:30</span>
                     </div>
                 </div>
-                <div class="col-md-8">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="service-item">
-                                <h4>Current Cordinates</h4>
-                                <div class="line-dec"></div>
-                                <p>Stuck somewhere in the traffic of Bangalore,
-                                    India. Having said that, I still love</p>
-                                <img class='bengaluru-image'
-                                    src="./img/bengaluru.svg" alt="Map of Bangalore (Bengaluru), India" />
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="service-item">
-                                <h4>Bullish about</h4>
-                                <div class="line-dec"></div>
-                                <p>From the tech perspective I believe that
-                                    things keep on evolving and they evolve
-                                    faster than what you think they are. So I do
-                                    not tie myself to tech, but to solutions.
-                                    But I do feel, there is a lot to be done for
-                                    rural India.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="service-item">
-                                <h4>Current working on</h4>
-                                <div class="line-dec"></div>
-                                <p>Building <a href="https://sudama.org">Sudama
-                                        Health</a> to enable affordable and
-                                    accessible healthcare for all.</p>
-                                <p>I also keep myself busy learning by writing
-                                    small apps for myself and my kids. You can try the
-                                    apps I made at <a
-                                            href="https://apps.100rabh.com"
-                                            target="_blank">https://apps.100rabh.com</a>. Use at your own risk.
-                                    No guarantees or warranties. Some of them are </p>
-                                <ul>
-                                    <li> - <a
-                                            href="https://the.100rabh.com/kids_editor/"
-                                            target="_blank">Animated
-                                            Kids Editor</a> </li>
-                                    <li > - <a href="https://apps.100rabh.com/msg/"
-                                            target="_blank" >Message on
-                                            WhatsApp/Telegram/Signal without saving a
-                                            Number </a>
-                                    </li>
-                                    <li> - Sudoku for kids <ul> - <a
-                                                href="https://drive.google.com/file/d/1Bj1dbkc0qlw_m4P_fipr5r0F-CVcvWEG/view?usp=sharing"
-                                                target="_blank"
-                                                rel="noopener noreferrer">Android
-                                                APK</a> </ul>
-                                        <ul> - <a
-                                                href="http://apps.100rabh.com/sudoku/"
-                                                target="_blank">Web
-                                                version</a> </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="service-item">
-                                <h4>What do I want to build</h4>
-                                <div class="line-dec"></div>
-                                <p>Big plans to make a difference to the world.
-                                    Current focus is on rural India. I wonder if
-                                    somehow I could make an impact
-                                    in the lives of folks there. This is a
-                                    bigger conversation which I have penned in
-                                    this <a
-                                        href="http://blog.100rabh.com/2022/05/my-current-thoughts-on-starting-up.html">blog
-                                        post</a>.
-                                    Currently, I have some things rolling and
-                                    more on that once details are figured out.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+
+                <div class="social-links">
+                    <a class="social-icon-btn" href="https://www.linkedin.com/in/100rabh/" target="_blank"
+                        rel="noopener noreferrer" title="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+                    <a class="social-icon-btn" href="https://github.com/the100rabh/" target="_blank"
+                        rel="noopener noreferrer" title="GitHub Node"><i class="fab fa-github"></i></a>
+                    <a class="social-icon-btn" href="https://mastodon.social/@the100rabh" target="_blank"
+                        rel="me noopener noreferrer" title="Mastodon Network"><i class="fab fa-mastodon"></i></a>
+                    <a class="social-icon-btn" href="https://blog.100rabh.com" target="_blank" rel="noopener noreferrer"
+                        title="Personal Blog"><i class="fa fa-blog"></i></a>
                 </div>
             </div>
-        </div>
-    </div>
+        </aside>
 
+        <!-- Right Asymmetric Content Stream -->
+        <main class="main-content-panel" id="home">
+            <span class="code-spec-anno">main.main-content-panel { display: flex; flex-direction: column; }</span>
 
-    <div class="parallax-content social-content" id="social">
-        <div class="container">
-            <h1> Socials </h1>
-            <div class="row">
-                <div class="col-xl-12">
-                    <div id="owl-testimonials" class="owl-carousel owl-theme">
-                        <div class="item">
-                            <div class="testimonials-item">
-                                <div id="myTimeline"
-                                    class="mastodon-timeline mastodon-timeline-light">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimonials-item">
-                                <div id="feedbox">
-                                    <div class='feed-header'>
-                                        <h4>From my <a
-                                                href='https://blog.100rabh.com'
-                                                target="_blank"
-                                                rel="noopener noreferrer">blog</a>
-                                        </h4>
-                                    </div>
-                                    <div id="feed_here">
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="primary-button">
-                        <a href="#home">Back To Top</a>
-                    </div>
-                    <ul>
-                        <li><a href="https://mastodon.social/@the100rabh"
-                                target="_blank" rel="me noopener noreferrer"><i
-                                    class="fab fa-mastodon"></i></a></li>
-                        <li><a href="https://blog.100rabh.com" target="_blank"
-                                rel="noopener noreferrer"><i
-                                    class="fa fa-blog"></i></a></li>
-                        <li><a href="https://github.com/the100rabh/"
-                                target="_blank" rel="noopener noreferrer"><i
-                                    class="fa fa-github"></i></a></li>
-                        <li><a href="https://www.linkedin.com/in/100rabh/"
-                                target="_blank" rel="noopener noreferrer"><i
-                                    class="fa fa-linkedin"></i></a></li>
-                        <li><a href="https://angel.co/u/saurabh-minni"
-                                target="_blank" rel="noopener noreferrer"><i
-                                    class="fa fa-angellist"></i></a></li>
-                    </ul>
-                    <p>Copyright &copy; 2025 Saurabh Minni
-                        - Design: <a rel="nofollow noopener noreferrer"
-                            href="https://templatemo.com"><em>TemplateMo</em></a>
+            <!-- Hero Intro Section -->
+            <section class="dashboard-section hero-section">
+                <div class="hero-bio-container">
+                    <h2 class="hero-tagline">Building at the intersection of <span class="highlight">deep
+                            engineering</span>, distributed intelligence, and <span class="highlight">human
+                            impact</span>.</h2>
+                    <p class="bio-paragraph">
+                        I am a software engineer, full-stack architect, and open-source craftsman with over two decades
+                        of experience scaling software systems at global technology giants like
+                        <strong>Google</strong>, <strong>Adobe</strong> and <strong>Intuit</strong>.
+                    </p>
+                    <p class="bio-paragraph">
+                        Today, I am the founder of <strong>Sudama Health</strong>, where we synthesize robust
+                        telemedicine workflows with localized physical clinical infrastructure to deliver accessible,
+                        high-quality healthcare to rural communities. When I am not scaling healthcare networks, I
+                        architect local LLM tools, design edge-hardware configurations and build interactive
+                        educational games for my kids.
                     </p>
                 </div>
-            </div>
+            </section>
+
+            <!-- 01. CORE VENTURES SECTION -->
+            <section class="dashboard-section" id="ventures">
+                <span class="code-spec-anno">section#ventures { border: 1px solid var(--accent-primary); }</span>
+
+                <div class="section-header">
+                    <span class="section-num">01. CORE VENTURE</span>
+                    <h3 class="section-title">Sudama Health - Redefining Rural Telemedicine</h3>
+                    <div class="section-subtitle">> Status: Active Operational Network | Role: Founder </div>
+                </div>
+
+                <!-- Telemetry Metrics card -->
+                <div class="venture-card">
+                    <div class="venture-telemetry">
+                        <span class="code-spec-anno">.venture-telemetry { display: flex; flex-direction: column;
+                            }</span>
+                        <div class="ecg-grid-overlay"></div>
+                        <div class="ecg-title">
+                            <i class="fa fa-heartbeat"></i> CLINICAL OPERATION FREQUENCY
+                        </div>
+                        <div class="ecg-heartrate">
+                            72 <span class="unit">BPM</span>
+                        </div>
+
+                        <!-- Heartbeat clinical graph illustration -->
+                        <div class="ecg-svg-box">
+                            <svg viewBox="0 0 300 60" width="100%" height="100%">
+                                <path class="ecg-path"
+                                    d="M 0,30 L 80,30 L 90,20 L 100,40 L 110,5 L 120,55 L 130,30 L 140,30 L 150,30 L 230,30 L 240,20 L 250,40 L 260,5 L 270,55 L 280,30 L 300,30" />
+                            </svg>
+                        </div>
+
+                        <div class="telemetry-stats">
+                            <!-- <div class="stat-item">
+                                <div class="stat-number">2</div>
+                                <div class="stat-label">Active Clinical Hubs<br><small
+                                        style="color:var(--text-muted)">(Hale Chandapura & Neraluru)</small></div>
+                            </div> -->
+                            <div class="stat-item">
+                                <div class="stat-number" id="consultations-count">5,000+</div>
+                                <div class="stat-label">Completed Patient Consultations</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">100%</div>
+                                <div class="stat-label">Custom Telemedicine & EMR Integration</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="venture-narrative">
+                        <div class="venture-status">> EXPANDING NETWORK SYSTEM</div>
+                        <h4 class="narrative-title">Engineering Clinical Infrastructure</h4>
+                        <p class="narrative-text">
+                            Our mission is clear: bridge the rural-urban healthcare divide. We build modern, efficient
+                            clinics manned by nurses and powered by custom remote tech, allowing nurses to conduct
+                            seamless telemedicine consultations with fully connected equipment. Instead of forcing
+                            doctors into rigid software, we designed a lean, AI-augmented platform built around patient
+                            comfort, physician convenience, and effortless scalability. </p>
+                        <p class="narrative-text" style="font-weight: 600; color: var(--accent-primary);">
+                            <i class="fa fa-arrow-circle-right"></i> Grand Vision: Make healthcare accessible to all,
+                            regardless of where they are.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 02. THE LABORATORY SECTION -->
+            <section class="dashboard-section" id="laboratory">
+                <span class="code-spec-anno">section#laboratory .lab-grid { display: grid; grid-template-columns:
+                    repeat(3, 1fr); }</span>
+
+                <div class="section-header">
+                    <span class="section-num">02. THE LABORATORY</span>
+                    <h3 class="section-title">Experimental Software & Open-Source Artifacts</h3>
+                    <div class="section-subtitle">> Explore the Apps ↗ (apps.100rabh.com)</div>
+                </div>
+
+                <div class="lab-grid">
+                    <a class="lab-card-link" href="https://apps.100rabh.com" target="_blank">
+                        <div class="lab-card">
+                            <div class="lab-card-header">
+                                <i class="fa fa-bolt lab-card-icon"></i>
+                                <span class="agent-badge"><i class="fa fa-brands fa-html5"></i></span>
+                            </div>
+                            <div>
+                                <h4 class="lab-card-title">Educational Games for Kids</h4>
+                                <p class="lab-card-desc">Static HTML5 educational platforms designed to game-ify
+                                    arithmetic and language acquisition for primary education, basically my kids. Built
+                                    iteratively utilizing advanced LLM prompt-engineering.</p>
+                            </div>
+                            <div class="lab-card-footer">
+                                <span>HTML5 / JS / CSS3</span>
+                                <span>PEDAGOGICAL</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Project Node 2 -->
+                    <a class="lab-card-link" href="https://github.com/the100rabh/mastodon-to-bluesky-go"
+                        target="_blank">
+                        <div class="lab-card">
+                            <div class="lab-card-header">
+                                <i class="fa fa-sync lab-card-icon"></i>
+                                <span class="agent-badge"><i class="fa fa-brands fa-golang"></i></span>
+                            </div>
+                            <div>
+                                <h4 class="lab-card-title">Mastodon-to-Bluesky Cross-Poster</h4>
+                                <p class="lab-card-desc">A lean, high-efficiency cross-posting utility written in Go,
+                                    specifically optimized to run on legacy, resource-constrained armv7 architecture
+                                    (Raspberry Pi).</p>
+                            </div>
+                            <div class="lab-card-footer">
+                                <span>Golang / CLI</span>
+                                <span>SOCIAL WEB</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Project Node 3 -->
+                    <a class="lab-card-link" href="https://github.com/the100rabh/docker-app-builder" target="_blank">
+                        <div class="lab-card">
+                            <div class="lab-card-header">
+                                <i class="fa fa-hdd-o lab-card-icon"></i>
+                                <span class="agent-badge"><i class="fa fa-brands fa-docker"></i></span>
+                            </div>
+                            <div>
+                                <h4 class="lab-card-title">Docker App Builder</h4>
+                                <p class="lab-card-desc">A versatile desktop application for Linux designed to
+                                    streamline the process of defining, building, and running Docker containers by
+                                    providing an intuitive GUI to abstract complex Docker CLI syntax, enable persistent
+                                    configurations, and support flexible execution modes (Terminal, Background, GUI
+                                    App).</p>
+                            </div>
+                            <div class="lab-card-footer">
+                                <span>Docker/Python</span>
+                                <span>LOCAL CLOUD</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </section>
+
+            <!-- 03. CHRONICLES SECTION -->
+            <section class="dashboard-section" id="chronicles">
+                <span class="code-spec-anno">section#chronicles .chronicles-wrapper { display: grid;
+                    grid-template-columns: 1.5fr 1fr; }</span>
+
+                <div class="section-header">
+                    <span class="section-num">03. CHRONICLES</span>
+                    <h3 class="section-title">Engineering, Culture, and the Mechanics of the Future</h3>
+                    <div class="section-subtitle">> Read the Full Archive ↗ (blog.100rabh.com)</div>
+                </div>
+
+                <div class="chronicles-wrapper">
+                    <!-- Side Feed Widgets -->
+                    <div class="chronicles-sidebar">
+
+                        <!-- Dynamic Blog Feed -->
+                        <div class="widget-card">
+                            <span class="code-spec-anno">#feedbox { overflow-y: auto; max-height: 400px; }</span>
+                            <h4><i class="fa fa-rss"></i> DYNAMIC BLOG CHRONICLES</h4>
+                            <div id="feed_here">
+                                <p style="color:var(--text-muted); font-size:0.75rem;"><i
+                                        class="fa fa-spinner fa-spin"></i> Parsing Blog RSS Nodes...</p>
+                            </div>
+                        </div>
+
+                        <!-- Mastodon Stream -->
+                        <div class="widget-card">
+                            <h4><i class="fab fa-mastodon"></i> LIVE FEDIVERSE FEED</h4>
+                            <div id="myTimeline" class="mastodon-timeline mastodon-timeline-light">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Technical Spec Footer -->
+    <footer>
+        <div class="footer-copy">
+            &copy; 2026 Saurabh Minni
+        </div>
+
+        <!-- Live GitHub statistics drawer -->
+        <div class="footer-coord">
+            <i class="fab fa-github"></i> github.com/the100rabh node index: <span id="gh-repos-count">--</span> repos |
+            <span id="gh-stars-count">--</span> stars
         </div>
     </footer>
 
+    <!-- Bottom Slide-up Terminal Drawer (Bits Mode interaction) -->
+    <div class="terminal-drawer" id="terminal-cli">
+        <div class="terminal-header">
+            <div class="terminal-title">
+                <i class="fa fa-terminal"></i> BITS COMMAND SHELL &lt;saurabh-minni @ local-edge-node&gt;
+            </div>
+            <div class="terminal-ctrls">
+                <button class="terminal-btn btn-min" aria-label="Minimize terminal"></button>
+                <button class="terminal-btn btn-max" aria-label="Maximize terminal"></button>
+                <button class="terminal-btn btn-close" aria-label="Close terminal"></button>
+            </div>
+        </div>
+        <div class="terminal-body">
+            <div class="terminal-output">
+                <!-- Javascript will output command responses here -->
+            </div>
+            <div class="terminal-input-row">
+                <span class="terminal-prompt">saurabh-minni &gt;</span>
+                <input type="text" class="terminal-input" placeholder="Type 'help' to query systems..."
+                    aria-label="Terminal command input" autocomplete="off" spellcheck="false" />
+            </div>
+        </div>
+    </div>
 
-
+    <!-- Core Scripts Load -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-        crossorigin="anonymous"></script>
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-    <script src="js/vendor/bootstrap.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
-    <script>
-        function openCity(cityName) {
-            var i;
-            var x = document.getElementsByClassName("city");
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
-            }
-            document.getElementById(cityName).style.display = "block";
-        }
-    </script>
+    <!-- Feeds widgets scripts -->
+    <script src="feed/feed_widget.js"></script>
+    <script type="text/javascript" src="mastodon.widget.js"></script>
+
+    <!-- Bespoke bits-pulse core interactions script -->
+    <script src="js/bits-pulse.js"></script>
 
     <script>
         $(document).ready(function () {
-            console.log('calling updatefeed');
+            // Load blogger feed items dynamically
             update_feed('https://blog.100rabh.com/feeds/posts/default?alt=json&callback=?', 'feed_here');
 
-            // Add smooth scrolling to all links
-            $(".fixed-side-navbar a, .primary-button a").on('click', function (event) {
+            // Initialize Mastodon feed timeline widget
+            var mapi = new MastodonApi({
+                target_selector: '#myTimeline',
+                instance_uri: 'https://mastodon.social',
+                access_token: 'cgw8U8Tgj1z2hX3l3Irt_wC47J1CfRWPekPGkwzAARA',
+                account_id: '962389',
+                toots_limit: 10
+            });
 
-                // Make sure this.hash has a value before overriding default behavior
+            // Clean smooth scrolling anchor transitions
+            $(".sidebar-nav a, .logo-container").on('click', function (event) {
                 if (this.hash !== "") {
-                    // Prevent default anchor click behavior
                     event.preventDefault();
-
-                    // Store hash
                     var hash = this.hash;
 
-                    // Using jQuery's animate() method to add smooth page scroll
-                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    // Update active nav state
+                    $(".sidebar-nav li").removeClass("active");
+                    $(this).parent().addClass("active");
+
                     $('html, body').animate({
-                        scrollTop: $(hash).offset().top
-                    }, 800, function () {
-
-                        // Add hash (#) to URL when done scrolling (default click behavior)
-                        window.location.hash = hash;
-                    });
-                } // End if
+                        scrollTop: $(hash).offset().top - 90
+                    }, 500);
+                }
             });
 
-        });
-    </script>
-    <script src="github-widget/github-widget.min.js"></script>
-    <script src="feed/feed_widget.js"></script>
-
-
-    <script type="text/javascript" src="mastodon.widget.js"></script>
-    <script>
-        $(document).ready(function () {
-            // jQUERY is required!
-            var mapi = new MastodonApi({
-                target_selector: '#myTimeline'
-                , instance_uri: 'https://mastodon.social'
-                , access_token: 'cgw8U8Tgj1z2hX3l3Irt_wC47J1CfRWPekPGkwzAARA'
-                , account_id: '962389'
-                // optional parameters
-                // ===================
-                // - status max
-                , toots_limit: 10
-                // - if you are using font-awesome:
-                //,pic_icon        : '<i class="fa fa-picture-o"></i>'
-                // or a picture
-                //,pic_icon        : '<img src="mypicicon.gif" />'
+            // Sync nav item highlighting during window scrolling
+            $(window).scroll(function () {
+                var scrollDistance = $(window).scrollTop();
+                $('section.dashboard-section').each(function (i) {
+                    if ($(this).position().top <= scrollDistance + 120) {
+                        var id = $(this).attr('id');
+                        if (id) {
+                            $('.sidebar-nav li').removeClass('active');
+                            $('.sidebar-nav a[href="#' + id + '"]').parent().addClass('active');
+                        } else {
+                            // Intro section
+                            $('.sidebar-nav li').removeClass('active');
+                            $('.sidebar-nav a[href="#home"]').parent().addClass('active');
+                        }
+                    }
+                });
             });
         });
     </script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async
-        src="https://www.googletagmanager.com/gtag/js?id=UA-2279529-5"></script>
+
+    <!-- Global Google Analytics Node -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-2279529-5"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'UA-2279529-5');
     </script>
-    <script src="./js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-
-
-
 </body>
 
 </html>

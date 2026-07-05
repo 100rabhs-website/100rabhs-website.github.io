@@ -15,16 +15,16 @@
  */
 
 /* constructor >>> */
-var MastodonApi = function(params_) {
-	
+var MastodonApi = function (params_) {
+
 	// endpoint access settings
-	this.INSTANCE_URI        = params_.instance_uri;
-	this.ACCESS_TOKEN        = params_.access_token;
-	this.ACCOUNT_ID          = params_.account_id;
+	this.INSTANCE_URI = params_.instance_uri;
+	this.ACCESS_TOKEN = params_.access_token;
+	this.ACCOUNT_ID = params_.account_id;
 	// optional parameters
-	this.toots_limit         = params_.toots_limit || 20;
-	this.picIcon             = params_.pic_icon || '[PICTURE]';
-	this.boostsCountIcon     = params_.boosts_count_icon || '[Boost]';
+	this.toots_limit = params_.toots_limit || 20;
+	this.picIcon = params_.pic_icon || '[PICTURE]';
+	this.boostsCountIcon = params_.boosts_count_icon || '[Boost]';
 	this.favouritesCountIcon = params_.favourites_count_icon || '[Favourite]';
 
 	// display target element
@@ -36,11 +36,11 @@ var MastodonApi = function(params_) {
 
 	// spoiler toggle
 	// jQuery event handler
-	var toggleSpoiler = function(e_) {
+	var toggleSpoiler = function (e_) {
 		e_.preventDefault();
 
 		// btn text
-		if( $(this).hasClass('spoiler-opened') ) {
+		if ($(this).hasClass('spoiler-opened')) {
 			$(this).text(MastodonApi.text.spoilerBtnClosed);
 		}
 		else {
@@ -56,26 +56,26 @@ var MastodonApi = function(params_) {
 
 	// nsfw toggle
 	// jQuery event handler
-	var toggleNsfwMedia = function(e_) {
+	var toggleNsfwMedia = function (e_) {
 		e_.preventDefault();
 
-		if($(this).hasClass('nsfw-opened')) {
+		if ($(this).hasClass('nsfw-opened')) {
 			// hide image ===
 			$(this).css({
-				'background' : 'black'
+				'background': 'black'
 			})
-			.text(MastodonApi.text.nsfwViewMsg)
-			.removeClass('nsfw-opened');
+				.text(MastodonApi.text.nsfwViewMsg)
+				.removeClass('nsfw-opened');
 		}
 		else {
 			// display image ===
 			var img = $(this).attr('data-picpreview-url');
 			$(this).css({
-				'background'       : 'url('+img+') center center no-repeat'
-				,'background-size' : 'cover'
+				'background': 'url(' + img + ') center center no-repeat'
+				, 'background-size': 'cover'
 			})
-			.text('')
-			.addClass('nsfw-opened');
+				.text('')
+				.addClass('nsfw-opened');
 		}
 
 	}
@@ -87,19 +87,19 @@ var MastodonApi = function(params_) {
 	 * @author Azet
 	 * @param jquery_event e_
 	 */
-	var toggleMedia = function(e_) {
+	var toggleMedia = function (e_) {
 		e_.preventDefault();
 
 		var link = $(this).attr('href');
 		var filter = makeFilter();
-		var pic = $('<div class="toot-media-zoom" style="background: url('+link+') 50% 50% no-repeat; background-size: contain;"></div>');
+		var pic = $('<div class="toot-media-zoom" style="background: url(' + link + ') 50% 50% no-repeat; background-size: contain;"></div>');
 		filter.append(pic);
 	};
 
 
-	var makeFilter = function() {
+	var makeFilter = function () {
 		var filter = $('<div class="toot-media-filter"></div>');
-		filter.click(function(e_) {
+		filter.click(function (e_) {
 			e_.preventDefault();
 			$(this).remove();
 		});
@@ -128,10 +128,10 @@ MastodonApi.version = "1.07"; // display
 
 /* texts >>> */
 MastodonApi.text = {
-	spoilerBtnClosed  : "Show more"
-	,spoilerBtnOpened : "Show less"
-	,nsfwLabel        : "NSFW"
-	,nsfwViewMsg      : "Click to view"
+	spoilerBtnClosed: "Show more"
+	, spoilerBtnOpened: "Show less"
+	, nsfwLabel: "NSFW"
+	, nsfwViewMsg: "Click to view"
 };
 /* <<< */
 
@@ -139,10 +139,10 @@ MastodonApi.text = {
 /**
  * build timeline widget
  */
-MastodonApi.prototype.makeWidget = function() {
+MastodonApi.prototype.makeWidget = function () {
 	this.widget.addClass('mastodon-timeline');
 	this.widget.append($('<div class="mt-header"><h4>Toots</h4> by <span class="user-link"></span></div>'));
-	this.widget.append($('<div class="mt-body"><div class="mt-loading">loading...</div></div>'));
+	this.widget.append($('<div class="mt-body"><p style="color:var(--text-muted); font-size:0.75rem;"><i class="fa fa-spinner fa-spin"></i> Connecting to Mastodon API...</p></div>'));
 	this.widget.append($('<div class="mt-footer"></div>'));
 };
 
@@ -150,34 +150,36 @@ MastodonApi.prototype.makeWidget = function() {
 /**
  * listing function
  */
-MastodonApi.prototype.listStatuses = function() {
+MastodonApi.prototype.listStatuses = function () {
 	var mapi = this;
 
 	// get request
 	$.ajax({
-		url: this.INSTANCE_URI+'/api/v1/accounts/'+this.ACCOUNT_ID+'/statuses'
-		,headers: {
-			Authorization : 'Bearer '+this.ACCESS_TOKEN
+		url: this.INSTANCE_URI + '/api/v1/accounts/' + this.ACCOUNT_ID + '/statuses'
+		, headers: {
+			Authorization: 'Bearer ' + this.ACCESS_TOKEN
 		}
-		,method : 'GET'
-		,dataType: 'json'
-		,data : {
-			limit : this.toots_limit
+		, method: 'GET'
+		, dataType: 'json'
+		, data: {
+			limit: this.toots_limit
 		}
-		,success: function(data_) {
+		, success: function (data_) {
 			// clear the loading message
 			$('.mt-body', mapi.widget).html("");
+			console.log("data received -- MAPI");
+			console.log(mapi.widget.innerHTML);
 			//console.log( data_ );
 
 			// add posts
-			for(var i in data_) {
-				if(i==0) {
+			for (var i in data_) {
+				if (i == 0) {
 					// update user link only at first post
 					var account = data_[i].account;
 					setHeaderUserLink.call(mapi, account);
 					setFooterLink.call(mapi, account);
 				}
-				if(data_[i].visibility=='public') {
+				if (data_[i].visibility == 'public') {
 					// list only public toots
 					appendStatus.call(mapi, data_[i]);
 				}
@@ -186,11 +188,11 @@ MastodonApi.prototype.listStatuses = function() {
 			// fix content link target
 			$('a', mapi.widget).attr('target', '_blank');
 		}
-		,error: function(d_) {
+		, error: function (d_) {
 			//console.log( d_ );
-			if(d_.responseJSON) {
+			if (d_.responseJSON) {
 				$('.mt-header', mapi.widget).html('ERROR');
-				$('.mt-body', mapi.widget).html( '<div class="mt-error">' + d_.responseJSON.error + '</div>');
+				$('.mt-body', mapi.widget).html('<div class="mt-error">' + d_.responseJSON.error + '</div>');
 			}
 		}
 	});
@@ -200,9 +202,9 @@ MastodonApi.prototype.listStatuses = function() {
 	 * add user link
 	 * @param object account_
 	 */
-	var setHeaderUserLink = function(account_) {
+	var setHeaderUserLink = function (account_) {
 		// set user name and link
-		$('.user-link', this.widget).append("<a href='"+account_.url+"'>@"+account_.username+"</a>");
+		$('.user-link', this.widget).append("<a href='" + account_.url + "'>@" + account_.username + "</a>");
 	};
 
 
@@ -210,9 +212,9 @@ MastodonApi.prototype.listStatuses = function() {
 	 * add user link
 	 * @param object account_
 	 */
-	var setFooterLink = function(account_) {
+	var setFooterLink = function (account_) {
 		var domain = this.INSTANCE_URI.replace(/https?:\/\//, '');
-		$('.mt-footer', this.widget).append("View on <a href='"+account_.url+"'>"+domain+"</a>");
+		$('.mt-footer', this.widget).append("View on <a href='" + account_.url + "'>" + domain + "</a>");
 	};
 
 
@@ -220,18 +222,18 @@ MastodonApi.prototype.listStatuses = function() {
 	 * inner function to add each message in container
 	 * @param object status_
 	 */
-	var appendStatus = function(status_) {
-		console.log( status_ );
+	var appendStatus = function (status_) {
+		console.log(status_);
 		var content;
 		var date, url, avatar, user;
 
 		// dealing with spoiler content
-		if(status_.spoiler_text != "") {
+		if (status_.spoiler_text != "") {
 			// handle spoilers
 			//content.wrap('<div class="spoiler"></div>');
 			content = $(
-				'<div class="spoiler-header">'+status_.spoiler_text+'<a class="btn-spoiler" href="#open-spoiler">'+MastodonApi.text.spoilerBtnClosed+'</a></div>'+
-				'<div class="spoiler-body toot-text">'+status_.content+'</div>' +
+				'<div class="spoiler-header">' + status_.spoiler_text + '<a class="btn-spoiler" href="#open-spoiler">' + MastodonApi.text.spoilerBtnClosed + '</a></div>' +
+				'<div class="spoiler-body toot-text">' + status_.content + '</div>' +
 				'<div class="toot-medias"></div>'
 			);
 		}
@@ -239,9 +241,9 @@ MastodonApi.prototype.listStatuses = function() {
 			content = $("<div class='toot-text'>" + status_.content + "</div>" + "<div class='toot-medias'></div>");
 		}
 
-		if(status_.reblog) {
+		if (status_.reblog) {
 			// data from BOOSTED status
-            content = $("<div class='toot-text'>" + status_.reblog.content + "</div>" + "<div class='toot-medias'></div>");
+			content = $("<div class='toot-text'>" + status_.reblog.content + "</div>" + "<div class='toot-medias'></div>");
 
 			// toot date
 			date = prepareDateDisplay(status_.reblog.created_at);
@@ -259,7 +261,7 @@ MastodonApi.prototype.listStatuses = function() {
 			avatar.append(boosterAvatar);
 
 			// user name and url
-			user = $("<div class='mt-user'><a href='"+status_.reblog.account.url+"'>"+status_.reblog.account.username+"</a></div>");
+			user = $("<div class='mt-user'><a href='" + status_.reblog.account.url + "'>" + status_.reblog.account.username + "</a></div>");
 		}
 		else {
 			// data from status
@@ -275,14 +277,14 @@ MastodonApi.prototype.listStatuses = function() {
 			avatar.css(makeAvatarCss(status_.account.avatar));
 
 			// user name and url
-			user = $("<div class='mt-user'><a href='"+status_.account.url+"'>"+status_.account.username+"</a></div>");
+			user = $("<div class='mt-user'><a href='" + status_.account.url + "'>" + status_.account.username + "</a></div>");
 		}
 
 		// format date
-		var timestamp = $("<div class='mt-date'><a href='"+url+"'>" + date + "</a></div>");
+		var timestamp = $("<div class='mt-date'><a href='" + url + "'>" + date + "</a></div>");
 
 		// sensitive content
-		if(status_.sensitive) {
+		if (status_.sensitive) {
 			timestamp.prepend('<span class="nsfw">' + MastodonApi.text.nsfwLabel + '</span>');
 		}
 
@@ -291,30 +293,30 @@ MastodonApi.prototype.listStatuses = function() {
 
 		// add to HTML
 
-		if(status_.reblog) {
-			toot.append("<div class='toot-retoot'>"+ this.boostsCountIcon +"</div>");
+		if (status_.reblog) {
+			toot.append("<div class='toot-retoot'>" + this.boostsCountIcon + "</div>");
 		}
 
-		toot.append( avatar );
-		toot.append( user );
-		toot.append( timestamp );
-		toot.append( content );
+		toot.append(avatar);
+		toot.append(user);
+		toot.append(timestamp);
+		toot.append(content);
 		$('.mt-body', this.widget).append(toot);
 
 		// media attachments? >>>
-		if(status_.media_attachments.length>0) {
+		if (status_.media_attachments.length > 0) {
 			var pic;
-			for(var picid in status_.media_attachments) {
+			for (var picid in status_.media_attachments) {
 				pic = this.replaceMedias(content, status_.media_attachments[picid], status_.sensitive);
-				toot.append( pic );
+				toot.append(pic);
 			}
 		}
 		// <<<
 
 		// stats (boosts + favourites counts) >>>
 		// data
-		var boostsCountIcon     = '<span class="toot-status-boosts">'     + this.boostsCountIcon     +":"+ status_.reblogs_count    + '</span>';
-		var favouritesCountIcon = '<span class="toot-status-favourites">' + this.favouritesCountIcon +":"+ status_.favourites_count + '</span>';
+		var boostsCountIcon = '<span class="toot-status-boosts">' + this.boostsCountIcon + ":" + status_.reblogs_count + '</span>';
+		var favouritesCountIcon = '<span class="toot-status-favourites">' + this.favouritesCountIcon + ":" + status_.favourites_count + '</span>';
 
 		// html nodes
 		var statusBar = $('<div class="toot-status">' +
@@ -322,7 +324,7 @@ MastodonApi.prototype.listStatuses = function() {
 			favouritesCountIcon +
 			'</div>');
 
-		toot.append( statusBar );
+		toot.append(statusBar);
 		// <<<
 	};
 
@@ -334,18 +336,18 @@ MastodonApi.prototype.listStatuses = function() {
 	 * @param StringDate date_ (standard time format)
 	 * @return String
 	 */
-	var prepareDateDisplay = function(date_) {
+	var prepareDateDisplay = function (date_) {
 		var displayTime = "";
 
 		//var now  = new Date();
-		var date = new Date( date_ );
+		var date = new Date(date_);
 
 		displayTime = date.getFullYear()
-			+"/"+(date.getMonth()+1)
-			+"/"+date.getDate()
-			+" "+date.getHours()
-			+":"+("0"+date.getMinutes()).replace(/0(\d{2})/, "$1")
-		;
+			+ "/" + (date.getMonth() + 1)
+			+ "/" + date.getDate()
+			+ " " + date.getHours()
+			+ ":" + ("0" + date.getMinutes()).replace(/0(\d{2})/, "$1")
+			;
 
 		return displayTime;
 	};
@@ -356,10 +358,10 @@ MastodonApi.prototype.listStatuses = function() {
 	 * @param string avatar_ url of the avatar picture to apply
 	 * @return object css properties to apply with jQuery.css method
 	 */
-	var makeAvatarCss = function(avatar_) {
+	var makeAvatarCss = function (avatar_) {
 		return {
-			'background' : "white url('"+avatar_+"') 50% 50% no-repeat"
-			,'background-size' : 'contain'
+			'background': "white url('" + avatar_ + "') 50% 50% no-repeat"
+			, 'background-size': 'contain'
 		};
 	};
 
@@ -375,22 +377,22 @@ MastodonApi.prototype.listStatuses = function() {
  * @param bool nsfw_ indicates the media is not to be displayed
  * @return object modifier content object
  */
-MastodonApi.prototype.replaceMedias = function(content, media_, nsfw_) {
+MastodonApi.prototype.replaceMedias = function (content, media_, nsfw_) {
 	var nsfw = nsfw_ || false;
 
 	// icon in place of link in content
-	var icon = '<a href="'+media_.url+'" class="toot-media-link" target="_blank">'+this.picIcon+'</a>';
-	$('a[href="'+media_.text_url+'"]', content).replaceWith(icon);
+	var icon = '<a href="' + media_.url + '" class="toot-media-link" target="_blank">' + this.picIcon + '</a>';
+	$('a[href="' + media_.text_url + '"]', content).replaceWith(icon);
 
-	if(nsfw) {
+	if (nsfw) {
 		// pics hidden
-		var pic = '<div class="toot-media-preview toot-media-nsfw" style="background:black;" data-picpreview-url="'+media_.preview_url+'">' +
+		var pic = '<div class="toot-media-preview toot-media-nsfw" style="background:black;" data-picpreview-url="' + media_.preview_url + '">' +
 			MastodonApi.text.nsfwViewMsg +
 			'</div>';
 	}
 	else {
 		// pics visible
-		var pic = '<div class="toot-media-preview" style="background-image:url('+media_.preview_url+');"></div>';
+		var pic = '<div class="toot-media-preview" style="background-image:url(' + media_.preview_url + ');"></div>';
 	}
 
 	return pic;

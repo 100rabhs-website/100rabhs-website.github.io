@@ -1,269 +1,184 @@
 /**
- * Mastodon User Timeline Widget
- * Copyright (c) 2017 有限会社アゼット
- * ライセンスに関して、LICENSEファイルを参照下さい。
- * see license file for details.
- *
- * @author Azet <http://www.azet.jp>
- * @version 1.05
+ * Mastodon User Timeline Widget - Bits & Pulse Custom Styling
+ * Aligned with Saurabh Minni's Personal Command Center
  */
 
-/* main container >>> */
+/* Main widget container override */
 .mastodon-timeline {
-	box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
-	font-family:  'Noto Sans Japanese', "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, メイリオ, Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
-	margin-bottom: 1em;
+	box-shadow: none !important;
+	font-family: var(--font-body) !important;
+	background: transparent !important;
+	color: var(--text-color) !important;
+	border: none !important;
+	margin-bottom: 0 !important;
 }
 
+/* Header & Footer Coordinates styling */
 .mt-header,
 .mt-footer {
-	padding: 10px 10px;
-}
-
-.mastodon-timeline a:link,
-.mastodon-timeline a:active,
-.mastodon-timeline a {
-	text-decoration: none;
-	font-weight: normal;
+	padding: 8px 0 !important;
+	background: transparent !important;
+	border-color: rgba(255, 255, 255, 0.05) !important;
+	font-family: var(--font-mono) !important;
+	font-size: 0.7rem !important;
 }
 
 .mt-header {
-	font-weight: bold;
-	border-bottom: 1px solid purple;
+	display: none !important; /* Hide original header as our parent card already has a stylized title */
 }
 
-.mt-header h4 {
-	display: inline-block;
-}
-
+/* Timeline body window scroll styling */
 .mt-body {
-	height: 550px;
-	overflow-y: auto;
-	-webkit-overflow-scrolling: touch;
-
-	/* force wrap */
-    white-space: pre-wrap; /* css-3 */
-    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
-    white-space: -pre-wrap; /* Opera 4-6 */
-    white-space: -o-pre-wrap; /* Opera 7 */
-    word-wrap: break-word; /* Internet Explorer 5.5+ */
+	height: 320px !important;
+	overflow-y: auto !important;
+	padding-right: 4px;
 }
 
-.mt-body .invisible {
-	display: none;
+/* Scrollbar customization for the widget */
+.mt-body::-webkit-scrollbar {
+	width: 4px;
 }
-
-.mt-loading {
-	padding: 10px;
-	text-align: center;
+.mt-body::-webkit-scrollbar-track {
+	background: rgba(11, 15, 25, 0.2);
 }
-
-.mt-footer {
-	text-align: center;
-}
-
-/* toots -messages */
-.mt-toot {
-	margin: 5px;
-	padding: 5px 5px 5px 65px;
-	position: relative;
-	min-height: 60px;
-}
-
-.mt-footer,
-.mt-toot:nth-child(n+2) {
-	border-top: 1px solid purple;
-}
-
-.mt-toot p:last-child {
-	margin-bottom: 0;
-}
-
-.mt-date {
-	text-align: right;
-}
-
-.mt-date .nsfw {
-	background: purple;
-	color: white;
-	margin-right: 1em;
-	padding: 0 3px;
+.mt-body::-webkit-scrollbar-thumb {
+	background: var(--monospace-ink);
 	border-radius: 2px;
 }
-
-
-.mt-avatar {
-	position: absolute;
-	top: 5px;
-	left: 5px;
-	/*margin: 0 10px 5px 0;*/
-	width: 50px;
-	height: 50px;
-	border-radius: 5px;
-	box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+.mt-body::-webkit-scrollbar-thumb:hover {
+	background: var(--accent-primary);
 }
 
+/* Toots & Messages boxes */
+.mt-toot {
+	margin: 0 0 1rem 0 !important;
+	padding: 0 0 1rem 54px !important;
+	min-height: 50px !important;
+	border-top: none !important;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.03) !important;
+	font-size: 0.8rem !important;
+	line-height: 1.5 !important;
+	position: relative;
+}
+
+.mt-toot:last-child {
+	border-bottom: none !important;
+	margin-bottom: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+/* Toot copy paragraphs */
+.mt-toot p {
+	margin-bottom: 0.5rem !important;
+	color: #CBD5E1 !important;
+}
+
+.mt-toot a {
+	color: var(--accent-secondary) !important;
+	transition: color 0.2s ease;
+}
+
+.mt-toot a:hover {
+	color: var(--accent-primary) !important;
+	text-decoration: underline !important;
+}
+
+/* Avatars styling */
+.mt-avatar {
+	position: absolute;
+	top: 2px;
+	left: 0;
+	width: 42px !important;
+	height: 42px !important;
+	border-radius: 8px !important;
+	border: 1px solid rgba(255, 255, 255, 0.1) !important;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Booster / Reblog avatar adjustments */
 .mt-avatar-boosted {
-	width: 40px;
-	height: 40px;
+	width: 34px !important;
+	height: 34px !important;
 }
 
 .mt-avatar-booster {
-	width: 25px;
-	height: 25px;
-	top: 25px;
-	left: 25px;
+	width: 20px !important;
+	height: 20px !important;
+	top: 22px !important;
+	left: 22px !important;
+	border-radius: 4px !important;
+	border: 1px solid var(--accent-primary) !important;
 }
 
-.mt-error {
-	color: darkred;
-	background: lightpink;
-	margin: 5px;
-	padding: 10px;
+/* Date and timeline log metadata */
+.mt-date {
+	font-family: var(--font-mono) !important;
+	font-size: 0.65rem !important;
+	color: var(--text-muted) !important;
+	margin-bottom: 4px;
+	text-align: left !important;
 }
 
-/* spoiler === */
-a.btn-spoiler {
-	margin-left: 5px;
-	padding: 3px;
-	background: purple;
-	color: white;
-	border-radius: 3px;
-	font-size: 80%;
-}
-.spoiler-body {
-	display: none;
+.mt-date a {
+	color: var(--text-muted) !important;
 }
 
-/* medias === */
-.toot-media-preview {
-	position: relative;
-	margin-top: 5px;
-	height: 100px;
-	background-size: cover;
-	background-position: center center;
-	box-sizing: border-box;
-	color: white;
-	text-align: center;
-	padding-top: 40px;
-}
-
-.toot-media-preview a {
-	display: block;
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-}
-
-/* toots status === */
-.toot-status {
+.mt-date .nsfw {
+	background: #EF4444 !important;
+	color: white !important;
+	padding: 1px 4px !important;
+	font-size: 0.6rem !important;
 	font-weight: bold;
-	margin-top: 5px;
+	border-radius: 3px !important;
+	margin-right: 0.5rem !important;
 }
 
-.toot-status .toot-status-boosts,
-.toot-status .toot-status-favourites {
-	display: inline-block;
-	white-space: nowrap;
-	margin-right: 10px;
+/* Spoiler controls */
+a.btn-spoiler {
+	background: var(--monospace-ink) !important;
+	color: var(--alabaster-white) !important;
+	font-family: var(--font-mono) !important;
+	font-size: 0.65rem !important;
+	border-radius: 4px !important;
+	padding: 2px 6px !important;
+	transition: background 0.2s ease;
 }
 
-/* medias display === */
-.toot-media-filter {
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background: rgba(0, 0, 0, 0.9);
+a.btn-spoiler:hover {
+	background: var(--accent-primary) !important;
 }
 
-.toot-media-zoom {
-	position: fixed;
-	top: 5%;
-	right: 5%;
-	bottom: 5%;
-	left: 5%;
+/* Toot interaction numbers (Faves & Boosts) */
+.toot-status {
+	font-family: var(--font-mono) !important;
+	font-size: 0.65rem !important;
+	color: var(--text-muted) !important;
+	margin-top: 6px !important;
+	font-weight: normal !important;
 }
 
-/* <<< */
-
-/* light theme >>> */
-.mastodon-timeline-light {
-	background: #fafafa;
-	color: #555;
+.toot-status i {
+	margin-right: 3px;
+	color: var(--accent-primary);
 }
 
-.mastodon-timeline-light .mt-footer,
-.mastodon-timeline-light .mt-header {
-	background: #eee;
-}
-
-.mastodon-timeline-light a:link,
-.mastodon-timeline-light a:active,
-.mastodon-timeline-light a {
-	color: #26afff;
-}
-
-.mastodon-timeline-light .mt-header {
-	border-bottom-color: lightgrey;
-}
-
-.mastodon-timeline-light .mt-footer,
-.mastodon-timeline-light .mt-toot:nth-child(n+2) {
-	border-top-color:  lightgrey;
-}
-
-.mastodon-timeline-light .toot-status,
-.mastodon-timeline-light .mt-date a {
-	color: #aaa;
-}
-
-/* spoiler === */
-.mastodon-timeline-light a.btn-spoiler {
-	background: #26afff;
-	color: white;
-}
-/* <<< */
-
-/* dark theme >>> */
+/* Overriding theme specifications to keep it purely command-center native */
+.mastodon-timeline-light,
 .mastodon-timeline-dark {
-	background: #393f4f;
-	color: white;
+	background: transparent !important;
+	color: var(--text-color) !important;
 }
 
+.mastodon-timeline-light .mt-footer,
+.mastodon-timeline-light .mt-header,
 .mastodon-timeline-dark .mt-footer,
 .mastodon-timeline-dark .mt-header {
-	background: #313543;
+	background: transparent !important;
+	border-color: rgba(255, 255, 255, 0.05) !important;
 }
 
-.mastodon-timeline-dark a:link,
-.mastodon-timeline-dark a:active,
-.mastodon-timeline-dark a {
-	color: #2b90d9;
-}
-
-.mastodon-timeline-dark .mt-header {
-	border-bottom-color: #606984;
-}
-
-.mastodon-timeline-dark .mt-footer,
+.mastodon-timeline-light .mt-toot:nth-child(n+2),
 .mastodon-timeline-dark .mt-toot:nth-child(n+2) {
-	border-top-color: #606984;
+	border-top: none !important;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.03) !important;
 }
-
-.mastodon-timeline-dark .toot-status,
-.mastodon-timeline-dark .mt-date a {
-	color: #606984;
-}
-
-/* spoiler === */
-.mastodon-timeline-dark a.btn-spoiler {
-	background: #687390;
-	color: #393F4F;
-}
-/* <<< */
-
-/* vim set foldmethod=marker foldlevel=0 */
