@@ -6,19 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Saurabh Minni - Founder & Builder</title>
+    <link rel="canonical" href="https://100rabh.com/">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <meta name="description"
         content="Saurabh Minni's personal portfolio. 20-year tech veteran (Ex-Google, Ex-Intuit) and founder of Sudama Health scaling rural telemedicine networks.">
     <meta name="keywords"
         content="Saurabh Minni, the100rabh, developer, engineer, founder, healthtech, Sudama Health, Google, Intuit, Go, Python, local LLM, rural telemedicine">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="theme-color" content="#0B0F19">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://100rabh.com/">
+    <meta property="og:site_name" content="Saurabh Minni">
+    <meta property="og:locale" content="en_US">
     <meta property="og:title" content="Saurabh Minni - Technology Founder & Full-Stack Architect">
     <meta property="og:description"
         content="20-year tech veteran (Ex-Google, Ex-Intuit) and founder of Sudama Health. Building at the intersection of deep engineering and human impact.">
-    <meta property="og:image" content="https://100rabh.com/img/avatar2.png">
+    <meta property="og:image" content="https://100rabh.com/img/avatar3.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
@@ -26,10 +31,16 @@
     <meta property="twitter:title" content="Saurabh Minni - Technology Founder & Full-Stack Architect">
     <meta property="twitter:description"
         content="20-year tech veteran (Ex-Google, Ex-Intuit) and founder of Sudama Health. Building at the intersection of deep engineering and human impact.">
-    <meta property="twitter:image" content="https://100rabh.com/img/avatar2.png">
+    <meta property="twitter:image" content="https://100rabh.com/img/avatar3.png">
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <!-- Preconnect & Preload External Fonts & CDNs for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://code.jquery.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- External CSS Styling -->
     <link href="./fontawesome/css/all.css" rel="stylesheet">
@@ -39,6 +50,98 @@
 
     <!-- Bespoke Bits & Pulse Design System stylesheet -->
     <link rel="stylesheet" href="./css/bits-pulse.css">
+
+    <!-- Structured Data (JSON-LD) for Search & Generative AI Engines -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://100rabh.com/#person",
+          "name": "Saurabh Minni",
+          "givenName": "Saurabh",
+          "familyName": "Minni",
+          "url": "https://100rabh.com/",
+          "image": "https://100rabh.com/img/avatar3.png",
+          "jobTitle": "Founder",
+          "description": "20-year tech veteran (Ex-Google, Ex-Intuit, Ex-Adobe) and founder of Sudama Health scaling rural telemedicine networks.",
+          "gender": "http://schema.org/Male",
+          "nationality": "IN",
+          "alumniOf": [
+            {
+              "@type": "Organization",
+              "name": "Google"
+            },
+            {
+              "@type": "Organization",
+              "name": "Intuit"
+            },
+            {
+              "@type": "Organization",
+              "name": "Adobe"
+            }
+          ],
+          "knowsAbout": [
+            "Software Engineering",
+            "Telemedicine",
+            "EMR Integration",
+            "Full-Stack Architecture",
+            "Golang",
+            "Python",
+            "Docker",
+            "Local LLMs",
+            "Edge Hardware Configurations"
+          ],
+          "sameAs": [
+            "https://www.linkedin.com/in/100rabh/",
+            "https://github.com/the100rabh",
+            "https://mastodon.social/@the100rabh"
+          ]
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://100rabh.com/#organization",
+          "name": "Sudama Health",
+          "url": "https://100rabh.com/#ventures",
+          "founder": {
+            "@id": "https://100rabh.com/#person"
+          },
+          "description": "Sudama Health builds clinical infrastructure and custom telemedicine networks to bridge the rural-urban healthcare divide in India.",
+          "location": {
+            "@type": "Place",
+            "name": "Bengaluru, India",
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "12.9716",
+              "longitude": "77.5946"
+            }
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://100rabh.com/#website",
+          "url": "https://100rabh.com/",
+          "name": "Saurabh Minni - Founder & Builder",
+          "publisher": {
+            "@id": "https://100rabh.com/#person"
+          }
+        },
+        {
+          "@type": "ProfilePage",
+          "@id": "https://100rabh.com/#webpage",
+          "url": "https://100rabh.com/",
+          "name": "Saurabh Minni's Profile",
+          "isPartOf": {
+            "@id": "https://100rabh.com/#website"
+          },
+          "about": {
+            "@id": "https://100rabh.com/#person"
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 
 <body>
@@ -68,10 +171,10 @@
         <aside class="sidebar-panel">
             <span class="code-spec-anno">aside.sidebar-panel { position: sticky; border-right: 1px; }</span>
 
-            <div class="profile-card">
+            <div class="profile-card" itemscope itemtype="https://schema.org/Person">
                 <div class="avatar-container">
-                    <img class="avatar-image" src="./img/avatar3.png"
-                        alt="Saurabh Minni's premium tech-organic schematic avatar" />
+                    <img itemprop="image" class="avatar-image" src="./img/avatar3.png"
+                        alt="Saurabh Minni's premium tech-organic schematic avatar" width="100" height="100" fetchpriority="high" />
                 </div>
 
                 <div class="status-badge" id="operational-status">
@@ -80,8 +183,8 @@
                 </div>
 
                 <div class="profile-identity">
-                    <h1>SAURABH MINNI</h1>
-                    <h2>Founder at Sudama Health | Tech Veteran (Ex-Google, Ex-Intuit)</h2>
+                    <h1 itemprop="name">SAURABH MINNI</h1>
+                    <h2 itemprop="jobTitle">Founder at Sudama Health | Tech Veteran (Ex-Google, Ex-Intuit)</h2>
                 </div>
             </div>
 
@@ -113,13 +216,13 @@
                 </div>
 
                 <div class="social-links">
-                    <a class="social-icon-btn" href="https://www.linkedin.com/in/100rabh/" target="_blank"
+                    <a itemprop="sameAs" class="social-icon-btn" href="https://www.linkedin.com/in/100rabh/" target="_blank"
                         rel="noopener noreferrer" title="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
-                    <a class="social-icon-btn" href="https://github.com/the100rabh/" target="_blank"
+                    <a itemprop="sameAs" class="social-icon-btn" href="https://github.com/the100rabh/" target="_blank"
                         rel="noopener noreferrer" title="GitHub Node"><i class="fab fa-github"></i></a>
-                    <a class="social-icon-btn" href="https://mastodon.social/@the100rabh" target="_blank"
+                    <a itemprop="sameAs" class="social-icon-btn" href="https://mastodon.social/@the100rabh" target="_blank"
                         rel="me noopener noreferrer" title="Mastodon Network"><i class="fab fa-mastodon"></i></a>
-                    <a class="social-icon-btn" href="https://blog.100rabh.com" target="_blank" rel="noopener noreferrer"
+                    <a itemprop="url" class="social-icon-btn" href="https://blog.100rabh.com" target="_blank" rel="noopener noreferrer"
                         title="Personal Blog"><i class="fa fa-blog"></i></a>
                 </div>
             </div>
@@ -151,12 +254,12 @@
             </section>
 
             <!-- 01. CORE VENTURES SECTION -->
-            <section class="dashboard-section" id="ventures">
+            <section class="dashboard-section" id="ventures" itemscope itemtype="https://schema.org/Organization">
                 <span class="code-spec-anno">section#ventures { border: 1px solid var(--accent-primary); }</span>
 
                 <div class="section-header">
                     <span class="section-num">01. CORE VENTURE</span>
-                    <h3 class="section-title">Sudama Health - Redefining Rural Telemedicine</h3>
+                    <h3 class="section-title" itemprop="name">Sudama Health - Redefining Rural Telemedicine</h3>
                     <div class="section-subtitle">> Status: Active Operational Network | Role: Founder </div>
                 </div>
 
@@ -201,7 +304,7 @@
                     <div class="venture-narrative">
                         <div class="venture-status">> EXPANDING NETWORK SYSTEM</div>
                         <h4 class="narrative-title">Engineering Clinical Infrastructure</h4>
-                        <p class="narrative-text">
+                        <p class="narrative-text" itemprop="description">
                             Our mission is clear: bridge the rural-urban healthcare divide. We build modern, efficient
                             clinics manned by nurses and powered by custom remote tech, allowing nurses to conduct
                             seamless telemedicine consultations with fully connected equipment. Instead of forcing
@@ -227,15 +330,16 @@
                 </div>
 
                 <div class="lab-grid">
-                    <a class="lab-card-link" href="https://apps.100rabh.com" target="_blank">
+                    <a class="lab-card-link" href="https://apps.100rabh.com" target="_blank" itemscope itemtype="https://schema.org/SoftwareApplication">
                         <div class="lab-card">
                             <div class="lab-card-header">
                                 <i class="fa fa-bolt lab-card-icon"></i>
                                 <span class="agent-badge"><i class="fa fa-brands fa-html5"></i></span>
                             </div>
                             <div>
-                                <h4 class="lab-card-title">Educational Games for Kids</h4>
-                                <p class="lab-card-desc">Static HTML5 educational platforms designed to game-ify
+                                <h4 class="lab-card-title" itemprop="name">Educational Games for Kids</h4>
+                                <meta itemprop="applicationCategory" content="EducationalGame" />
+                                <p class="lab-card-desc" itemprop="description">Static HTML5 educational platforms designed to game-ify
                                     arithmetic and language acquisition for primary education, basically my kids. Built
                                     iteratively utilizing advanced LLM prompt-engineering.</p>
                             </div>
@@ -248,15 +352,16 @@
 
                     <!-- Project Node 2 -->
                     <a class="lab-card-link" href="https://github.com/the100rabh/mastodon-to-bluesky-go"
-                        target="_blank">
+                        target="_blank" itemscope itemtype="https://schema.org/SoftwareApplication">
                         <div class="lab-card">
                             <div class="lab-card-header">
                                 <i class="fa fa-sync lab-card-icon"></i>
                                 <span class="agent-badge"><i class="fa fa-brands fa-golang"></i></span>
                             </div>
                             <div>
-                                <h4 class="lab-card-title">Mastodon-to-Bluesky Cross-Poster</h4>
-                                <p class="lab-card-desc">A lean, high-efficiency cross-posting utility written in Go,
+                                <h4 class="lab-card-title" itemprop="name">Mastodon-to-Bluesky Cross-Poster</h4>
+                                <meta itemprop="applicationCategory" content="SocialNetworkingApplication" />
+                                <p class="lab-card-desc" itemprop="description">A lean, high-efficiency cross-posting utility written in Go,
                                     specifically optimized to run on legacy, resource-constrained armv7 architecture
                                     (Raspberry Pi).</p>
                             </div>
@@ -268,15 +373,16 @@
                     </a>
 
                     <!-- Project Node 3 -->
-                    <a class="lab-card-link" href="https://github.com/the100rabh/docker-app-builder" target="_blank">
+                    <a class="lab-card-link" href="https://github.com/the100rabh/docker-app-builder" target="_blank" itemscope itemtype="https://schema.org/SoftwareApplication">
                         <div class="lab-card">
                             <div class="lab-card-header">
                                 <i class="fa fa-hdd-o lab-card-icon"></i>
                                 <span class="agent-badge"><i class="fa fa-brands fa-docker"></i></span>
                             </div>
                             <div>
-                                <h4 class="lab-card-title">Docker App Builder</h4>
-                                <p class="lab-card-desc">A versatile desktop application for Linux designed to
+                                <h4 class="lab-card-title" itemprop="name">Docker App Builder</h4>
+                                <meta itemprop="applicationCategory" content="DeveloperApplication" />
+                                <p class="lab-card-desc" itemprop="description">A versatile desktop application for Linux designed to
                                     streamline the process of defining, building, and running Docker containers by
                                     providing an intuitive GUI to abstract complex Docker CLI syntax, enable persistent
                                     configurations, and support flexible execution modes (Terminal, Background, GUI

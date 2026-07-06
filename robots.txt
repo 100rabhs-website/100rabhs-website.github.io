@@ -1,0 +1,27 @@
+# Robots.txt for 100rabh.com
+# Optimized for standard Search Engine Crawlers & Generative AI Search Crawlers (GEO)
+
+User-agent: *
+Allow: /
+
+# Specifically allow Generative AI crawler bots
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Sitemaps
+Sitemap: https://100rabh.com/sitemap.xml
